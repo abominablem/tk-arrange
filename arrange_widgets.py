@@ -317,6 +317,14 @@ class WidgetSet(WidgetLayout):
                 grid_kwargs: kwargs to pass to tk.Widget.grid method
                 widget_kwargs: if widget is created at runtime, kwargs to pass
                                to the widget on creation
+                stretch_height: Boolean, allow widget to stretch vertically.
+                                Default is False.
+                stretch_height_weight: Integer, weighting for vertical space
+                                       allocation
+                stretch_width: Boolean, allow widget to stretch horizontally.
+                               Default is False.
+                stretch_height_weight: Integer, weighting for horizontal space
+                                       allocation
         layout : list
             Up to 2-dimensional list defining the layout of the buttons. Use
             sequential numbers aligning to the list of button names.
@@ -333,9 +341,9 @@ class WidgetSet(WidgetLayout):
         frm_kwargs : dict
             kwargs to pass to the frame object.
         """
-        self.name = self.__class__.__name__
         super().__init__(layout)
         self.frame = frame
+        self.master = frame
         self.wdict = widgets
         self.widgets = {key: WidgetSetComponent(key, widgets[key])
                         for key in widgets if key in self.indices}
