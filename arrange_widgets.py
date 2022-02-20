@@ -250,11 +250,11 @@ class WidgetSetComponent:
 
         self.stretch_height_weight = wdict.get(
             "stretch_height_weight",
-            1 if self.stretch_height  else 0
+            1 if self.stretch_height else 0
             )
         self.stretch_width_weight = wdict.get(
             "stretch_width_weight",
-            1 if self.stretch_width  else 0
+            1 if self.stretch_width else 0
             )
 
         self.row = None
@@ -323,7 +323,7 @@ class WidgetSet(WidgetLayout):
                                        allocation
                 stretch_width: Boolean, allow widget to stretch horizontally.
                                Default is False.
-                stretch_height_weight: Integer, weighting for horizontal space
+                stretch_width_weight: Integer, weighting for horizontal space
                                        allocation
         layout : list
             Up to 2-dimensional list defining the layout of the buttons. Use
