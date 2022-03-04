@@ -398,7 +398,7 @@ class WidgetSet(WidgetLayout):
         for i, layer in enumerate(self.layout):
             for j, x in enumerate(layer):
                 if x < 0:
-                    widget = self._get_spacer(x, self.wdict[x])
+                    widget = self._get_spacer(x, self.wdict.get(x, {}))
                     widget.set_grid_refs(row = i, column = j,
                                          rowspan = 1, columnspan = 1)
                     widget.grid(**widget.grid_refs(), **widget.grid_kwargs)
